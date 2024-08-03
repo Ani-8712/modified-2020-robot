@@ -54,7 +54,7 @@ public class ShootClosedLoop extends CommandBase {
         m_kickerWheel.setOpenloop(kickerWheelOutput.apply(shooterRPM.getAsDouble()));
         System.out.println("kicker wheel output: " + kickerWheelOutput.apply(shooterRPM.getAsDouble()));
         m_ballStopper.retract();
-        m_flywheel.setRPM(shooterRPM.getAsDouble());
+        m_flywheel.setRPM(shooterRPM.getAsDouble()*0.75);
 
         if (m_flywheel.reachedTargetVelocity()) {
             if (m_indexer.getBannerSensorValue()) {
